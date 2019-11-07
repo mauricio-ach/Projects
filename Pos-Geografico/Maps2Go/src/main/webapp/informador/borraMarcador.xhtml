@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Borrar Marcador</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style type="text/css">
+            .Mainbox {
+                background-color: rgba(150, 159, 170, 0.09);
+                width: 40%;
+                height: 300px;
+                overflow-y: scroll;
+                margin: auto;
+                padding-left: 20%;
+                padding-right: 20%;
+            }
+            .titleB {
+                color: #47525E;
+                font-family: Cardo;
+                font-size: 60px;
+                font-weight: 400;
+                line-height: 78px;
+                text-align: center;
+            }
+            .deleteBtn {
+                background-color: #E43236;
+                border-radius: 100px;
+                width: 108px;
+                height: 35px;                
+            }
+            .table{
+                width: 50%;
+                text-align: center;
+                border: none !important;
+                border-spacing: 50%;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+               
+            }
+        </style>
+    </h:head>
+    
+    <f:view>
+    <h:body>
+        <h1 align="center" class="titleB">Borrar Marcador</h1>
+        
+        <div class="Mainbox">
+            <h:form id="form">
+            
+                <p:growl id="message" showDetail="true" />
+                
+                <p:dataTable id="marcadores" var="Marcador"  value="#{marcadorCtrl.marcadores}" sortBy="#{Marcador.numMarcador}" expandableRowGroups="true" >
+                    
+                    <p:column headerText="Marcador" class="table">
+                        <h:outputText value="#{Marcador.tema.tipoTema}" style="" />
+                    </p:column>
+                    
+                    <p:column headerText="Datos Utiles" class="table" >
+                        <h:outputText value="#{Marcador.datosUtiles}" />
+                    </p:column>
+                    
+                    <p:column style="width:112px;text-align: center">
+                        <p:commandButton id="delate_btn" class="deleteBtn"   title="Eliminar" action="#{marcadorCtrl.eliminarMarcador(Marcador)}"  update=":form:message" >
+                            <p:confirm header="Confirmation" message="Seguro que quieres eliminar el marcador #{marcadorCtrl.marcadorSelected.descripcion}?" />
+                        </p:commandButton>
+                    </p:column>
+                    
+                </p:dataTable>
+                
+                <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                    <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+                    <p:commandButton value="No" type="button"  styleClass="ui-confirmdialog-no" icon="ui-icon-close"  />
+                </p:confirmDialog> 
+                <p:commandButton id="salir" value="Salir" action="/informador/perfil?faces-redirect=true" ajax="false" />
+                
+                
+            </h:form>
+        </div>
+    </h:body>
+    </f:view>
+</html>

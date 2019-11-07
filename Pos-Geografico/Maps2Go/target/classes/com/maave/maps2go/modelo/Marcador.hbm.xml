@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30/03/2019 09:45:09 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.maave.maps2go.modelo.Marcador" table="marcador" schema="public" optimistic-lock="version">
+        <id name="numMarcador" type="int">
+            <column name="num_marcador" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tema" class="com.maave.maps2go.modelo.Tema" fetch="select">
+            <column name="tipo_tema" not-null="true" />
+        </many-to-one>
+        <property name="descripcion" type="string">
+            <column name="descripcion" not-null="true" />
+        </property>
+        <property name="datosUtiles" type="string">
+            <column name="datos_utiles" />
+        </property>
+        <property name="longitud" type="double">
+            <column name="longitud" precision="17" scale="17" not-null="true" />
+        </property>
+        <property name="latitud" type="double">
+            <column name="latitud" precision="17" scale="17" not-null="true" />
+        </property>
+        <set name="comentarios" table="comentario" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="num_marcador" not-null="true" />
+            </key>
+            <one-to-many class="com.maave.maps2go.modelo.Comentario" />
+        </set>
+    </class>
+</hibernate-mapping>

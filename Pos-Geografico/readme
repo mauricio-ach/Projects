@@ -1,0 +1,40 @@
+********************************************
+********************************************
+Base de datos
+
+--Usuario
+usuario: maave
+contraseña: maave
+crear la bd con nombre maps2go
+correr el script base.sql
+
+--Comandos para crear bd y usuario
+
+1) psql -U postgres -h localhost -W 
+2) CREATE DATABASE maps2go;
+3) CREATE USER maave password 'maave';
+4) ALTER ROLE maave WITH SUPERUSER;
+
+--Comando para correr script 
+psql -h localhost -U maave -W -d maps2go -f base.sql 
+
+********************************************
+********************************************
+--Roles
+1 - Administrador
+2 - Informador
+3 - Comentarista
+
+********************************************
+********************************************
+
+-- Ramas
+
+1 - Clonar el repositorio original
+2 - Crear una nueva rama git branch {nombre de la rama}
+3 - Cambiar a la rama con git checkout {nombre de la rama}
+4 - Hacer push con los cambios a la rama git push origin {nombre de la rama}
+5 - Hacer la pull request en la página del repositorio 
+
+********************************************
+********************************************

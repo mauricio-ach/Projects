@@ -1,0 +1,62 @@
+********************************************************************
+
+Cifrado Secreto de Shamir 
+
+********************************************************************
+
+Araujo Chávez Mauricio
+
+********************************************************************
+
+********************************************************************
+********************************************************************
+----------------- IMPORTANTE ----------------------------------------	
+
+Revisar el siguiente enlace antes de ejecutar el programa, existe una restricción por parte de Java al
+utilizar la biblioteca para crear la contraseña. Descárgese el siguiente archivo: 
+
+------------------------------------------------------------------------
+http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html
+------------------------------------------------------------------------
+
+Corresponde a Java8, de tener una versión inferior descargar el archivo correspondiente...
+
+Descomprimir y mover los archivos .jar a la ruta donde esté instalado Java en la siguiente carpeta
+------------------------------------------------------------------------
+		${java.home}/jre/lib/security/
+------------------------------------------------------------------------
+
+Con esto no se tiene problemas al ejecutar el programa.
+
+********************************************************************
+********************************************************************
+
+Para compilar ejecute el comando: 
+
+$ ant
+
+Ésto generará un archivo llamado shamir.jar 
+Para ejecutar utilizar el comando e ingresando los datos de entrada:
+
+----Para cifrar----
+$ java -jar shamir.jar c evaluaciones n t archivo
+
+Donde:
+	"c"				   es la opción cifrar
+	"evaluaciones" 	   es el archivo donde se guardarán las evaluaciones (no incluir extensión .frg)
+					   del polinomio.
+	"n"  			   el número total de evaluaciones (n > 2)
+	"t"				   el número mínimo de puntos para decifrar(1 < t <= n)
+	"archivo"		   el archivo que se quiere cifrar
+
+----Para decifrar----
+$ java -jar shamir.jar d evaluaciones archivo
+
+Donde:
+	"d"				   es la opción decifrar
+	"evaluaciones"     es el archivo con al menos t de las evaluaciones (no incluir extensión .frg)
+	"archivo"		   el nombre del archivo cifrado
+
+El archivo decifrado se guardará en la carpeta Doc/
+
+********************************************************************

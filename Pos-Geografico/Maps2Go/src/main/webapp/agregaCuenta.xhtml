@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view>    
+
+        <h:head>
+            <title>Iniciar Sesion</title>
+            <h:outputStylesheet name="css/estilos.css"/>
+        </h:head>
+
+        <body>
+
+            <h1 class="titulo">Maps2Go</h1>
+            <h:form>
+            <p:commandButton id="home" icon="fa far fa-home" action="/index?faces-redirect=true"/>
+            </h:form>
+            <hr></hr>
+
+            <center>
+                <h2 class="titulo-form">Registrarse</h2>
+            </center>
+            <h:form id="formulario" >
+                <p:messages id="messages" showDetail="true" >
+                <p:autoUpdate />
+                </p:messages>
+                <center> 
+                    <p:inputText id="nombre"
+                                 value="#{usuarioCtrl.nombreUsuario}"
+                                 styleClass="textoCampo"
+                                 placeholder="Nombre"/> <br/>
+                    <p:inputText id="correo" 
+                                 value="#{usuarioCtrl.correo}"
+                                 styleClass="textoCampo"
+                                 placeholder="Correo"/> <br/>
+
+                    <p:password  id="contrasenia" 
+                                 value="#{usuarioCtrl.contrasenia}"
+                                 styleClass="textoCampo"
+                                 placeholder="Contraseña"/> <br/>
+
+                    <p:commandButton 
+                        action="#{usuarioCtrl.agregarCuenta()}"
+                        value="Aceptar"
+                        styleClass="ButtonAceptar"/>
+                </center>
+
+            </h:form>
+            <div class="pie">
+                <p>&#9400; 2019 Maave</p>
+            </div>
+        </body>
+    </f:view>
+</html>
+

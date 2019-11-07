@@ -1,0 +1,391 @@
+:root{
+  --item-size: 90px;
+  --char-width: 200px;
+  --char-height: 190px;
+  --hint-width: 300px;
+  --hint-height: 200px;
+  --pink-hot: #f02046;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+/* Contenedor principal del juego */
+#container{
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%; 
+  overflow: hidden;
+  transition: background 0.7s ease-in-out;
+}
+
+/* ***************************** Pantalla de menu *************************** */
+
+/* Contenedor del menu principal */
+#menu {
+  display: flex;
+  height: 100%;
+}
+
+/* Contenedor secundario del menu principal */
+#menu-container {
+  margin: auto auto;
+}
+
+/* Imagen del título principal */
+#title {
+  display: block;
+  width: 60vw;
+}
+
+/* Botón de jugar */
+.button {
+  color: white;
+  width: 200px;
+  height: 80px;
+  background: var(--pink-hot);
+  padding: 16px;
+  font-size: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 15px 0px 0px #cf1336, 0px 0px 20px 0px #bbb;
+  border-style: none;
+  cursor: pointer;
+  margin-left: calc(50% - 100px);
+}
+
+.button:hover {
+  transform: translateY(5px);
+  box-shadow: 0px 10px 0px 0px #cf1336, 0px 0px 20px 0px #bbb;
+}
+
+/* Personaje del menu */
+.menu-character {
+  height: 120px !important;
+  margin-left: calc(50vw - (var(--char-width) / 2)) !important;
+}
+
+/* ********************************* Intro ********************************** */
+/* Contenedor del letrero */
+#intro {
+  width: 50vw;
+  height: 90vh !important;
+  background-image: url(../assets/items/sign.png);
+  background-size: 100% 100%; 
+  position: absolute;
+  margin: 11vh 25vw 0;
+}
+
+/* Contenedor del hint */
+#intro-container {
+  display: flex;
+  width: 100%;
+  height: 50vh;
+}
+
+/* Contenedor del texto del hint */
+#intro-text {
+  color: #DDD;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.3rem;
+  margin: auto 50px;
+  text-align: justify;
+  text-shadow: 0 0 15px black, 0 0 20px black, 0 0 10px black;
+}
+
+#skip {
+  position: fixed;
+  margin-top: 80vh;
+  margin-left: calc(50% - 100px);
+}
+
+#next-tutorial {
+  position: fixed;
+  right: 10vw;
+  width: 90px;
+  border-radius: 50%; 
+  top: calc(50vh - 40px);
+}
+
+.intro-character1 {
+  margin-left: 10vw !important;
+  height: var(--char-height) !important;
+}
+
+/* ****************************** Tutorial ********************************** */
+
+#tutorial {
+  display: flex;
+  height: 100%;
+}
+
+#help-tutorial {
+  width: 50%;
+  color: #DDD;
+  padding: 30px 30px 30px;
+  margin: auto auto;
+  font-weight: bold;
+  border-radius: 10px;
+  text-align: center;
+  background-color: rgba(0,0,0,0.5);
+  text-shadow: black 0 0 1px, black 0 0 5px, black 0 0 10px;
+}
+
+#next-step-tutorial {
+  width: 100px;
+  height: 50px;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  margin: auto auto 0;
+}
+
+/* ***************************** Personaje ********************************** */
+
+/* Contenedor del personaje */
+#character-container {
+  position: fixed;
+  bottom: 3px;
+}
+
+/* Contenedor interno del personaje */
+#character{
+  width: var(--char-width);
+  height: var(--char-height);
+  background-size: 100% 100%;
+  text-align: center;
+  margin-left: 15px; 
+}
+
+/* Texto del personaje y el hint */
+#word, #hint {
+  display: inline-block;
+  text-align: center;
+  color: white;
+  text-shadow: black 0 0 5px, black 0 0 10px, black 0 0 15px;
+  margin-top: 55%; 
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1rem;
+}
+
+/* ********************************* Items ********************************** */
+
+/* Bellotas */
+.item{
+  width: var(--item-size) !important;
+  height: var(--item-size) !important;
+  display: flex;
+  position: fixed;
+  transition: transform 0.5s;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  text-shadow: black 0 0 5px, black 0 0 10px, black 0 0 15px;
+  font-weight: bolder;
+  background-size: 100% 100%;
+  z-index: 100;
+}
+
+.item:hover{
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+/* ********************************* Hint *********************************** */
+
+/* Contenedor del letrero */
+#billboard {
+  width: var(--hint-width);
+  height: var(--hint-height) !important;
+  background-image: url(../assets/items/letro.png);
+  background-size: 100% 100%; 
+  position: absolute;
+  top: calc(100vh - var(--hint-height) - 3px);
+  right: 5px;
+}
+
+/* Contenedor del hint */
+#hint-container {
+  display: table;
+  height: calc(var(--hint-height) - 70px) !important;
+}
+
+/* Contenedor del texto del hint */
+#hint {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  padding: 10px 10px 0;
+  font-size: 18px;
+  margin-top: 0%;
+}
+
+/* ********************************* Score ********************************** */
+
+#score {
+  width: 200px;
+  /*height: initial !important;*/
+  position: absolute;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 8px;
+  right: 0;
+  top: 0;
+  text-align: center;
+  text-shadow: black 0 0 1px, black 0 0 5px, black 0 0 10px;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+/* ****************************** Scoreboard ******************************** */
+
+#score-board {
+  margin: auto;
+}
+
+#score-board button {
+  margin-top: 50px;
+}
+
+/* Tabla de puntuaciones */
+#score-board table{
+  text-align: center;
+  color: #EEE;
+  width: 50vw;
+  margin: 0 auto;
+  margin-top: 10%;
+  font-weight: bold;
+  background-color: rgba(0,0,0,0.3);
+}
+
+/* Cabecera de la tabla */
+.table-header {
+  background-color: rgba(0,0,0,0.3);
+}
+
+/* Celda */
+td {
+  width: 10%;
+}
+
+/* Renglón par */
+.even-row {
+  background-color: rgba(0,0,0,0.1)
+}
+
+#button-container {
+  width: fit-content;
+  margin: auto;
+}
+
+#button-container button {
+  display: inline;
+  margin-left: 10px;
+}
+
+#play-again, #skip {
+  vertical-align: middle;
+  transform: translateY(-31px);
+  padding: 8px 16px;
+}
+
+#play-again:hover, #skip:hover {
+  transform: translateY(-26px);
+}
+
+/* ******************************** Game Over ******************************* */
+
+/* Contenedor del menu principal */
+#scoreboard {
+  display: flex;
+  height: 100%;
+}
+
+/* Contenedor secundario del menu principal */
+#gameover-container {
+  position: relative;
+  margin: auto auto;
+  width: 35vw;
+}
+
+#game_over {
+  width: 100%;
+}
+
+/* Campo de texto de username */
+#username {
+  border: none;
+  border-bottom: 3px solid #007bff;
+  background-color: rgba(0,0,0,0);
+  width: 85%;
+  text-align: center;
+  font-size: 1.5rem;
+  transition: all 0.5s;
+  font-variant: small-caps;
+  font-weight: bold;
+  margin: 50px 7.5% 0; 
+}
+
+#username:focus {
+  width: 100%;
+  margin: 50px 0 0;
+  /*font-size: 2rem;
+  border-bottom: 4px solid var(--pink-hot);*/
+}
+
+#username-error {
+  text-align: center;
+  margin-bottom: 40px;
+  color:#dc3545;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.username-wrong {
+  border-color: #dc3545 !important;
+}
+
+.username-success {
+  border-color: #28a745 !important;
+}
+/* ******************************* Exit-Game ******************************** */
+
+#exit-game {
+  position: absolute;
+  display: flex;
+  left: 15px;
+  top: 10px;
+  padding: 10px;
+  color: #EEE;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0,0,0,0.5);
+  cursor: pointer;
+}
+
+#exit-game * {
+  margin: auto;
+}
+
+#exit-game:hover {
+  color: #bbb;
+}
+
+/* ******************************* Miscelánea ******************************* */
+
+.hide {
+  display: none !important;
+}
+
+.hidden {
+  visibility: hidden;
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30/03/2019 09:45:09 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.maave.maps2go.modelo.Comentario" table="comentario" schema="public" optimistic-lock="version">
+        <id name="numComentario" type="int">
+            <column name="num_comentario" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="marcador" class="com.maave.maps2go.modelo.Marcador" fetch="select">
+            <column name="num_marcador" not-null="true" />
+        </many-to-one>
+        <many-to-one name="usuario" class="com.maave.maps2go.modelo.Usuario" fetch="select" lazy="false">
+            <column name="id_usuario" not-null="true" />
+        </many-to-one>
+        <property name="contenido" type="string">
+            <column name="contenido" not-null="true" />
+        </property>
+        <property name="likes" type="int">
+            <column name="likes" not-null="true" />
+        </property>
+        <property name="dislikes" type="int">
+            <column name="dislikes" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30/03/2019 09:45:09 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.maave.maps2go.modelo.Usuario" table="usuario" schema="public" optimistic-lock="version">
+        <id name="idUsuario" type="int">
+            <column name="id_usuario" />
+            <generator class="identity" />
+        </id>
+        <property name="nombreUsuario" type="string">
+            <column name="nombre_usuario" not-null="true" />
+        </property>
+        <property name="contrasenia" type="string">
+            <column name="contrasenia" not-null="true" />
+        </property>
+        <property name="correo" type="string">
+            <column name="correo" not-null="true" unique="true" />
+        </property>
+        <property name="rol" type="int">
+            <column name="rol" not-null="true" />
+        </property>
+        <set name="temas" table="tema" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_usuario" not-null="true" />
+            </key>
+            <one-to-many class="com.maave.maps2go.modelo.Tema" />
+        </set>
+        <set name="comentarios" table="comentario" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="id_usuario" not-null="true" />
+            </key>
+            <one-to-many class="com.maave.maps2go.modelo.Comentario" />
+        </set>
+    </class>
+</hibernate-mapping>

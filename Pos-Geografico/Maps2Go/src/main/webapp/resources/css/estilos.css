@@ -1,0 +1,269 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23-feb-2019, 15:13:32
+    Author     : angela
+*/
+
+.titulo{
+  color: #47525E;
+  font-family: Josefin Sans;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 50px;
+  width: 5%;
+  text-align: center;
+}
+
+.registrarse-btn {
+  background-color: #00A6FF;
+  border-radius: 5px;
+  width: 5%;
+  height: 48px;
+  text-align: center;
+  left: 30%;
+    margin: auto;
+  display: block;
+}
+
+.iniciarSesion-btn{
+  background-color: rgba(255, 255, 255, 0);
+  border: 2px solid #47525E;
+  border-radius: 5px;
+  width: 5%;
+  height: 48px;
+  left: 35%;
+  margin: auto;
+  display: block;
+}
+
+.textoRegistrarse {
+  color: #FFFFFF;
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 62px;
+  width: 184.32px;
+  text-align: center;
+}
+
+.textoIniciarSesion {
+  color: #060708;
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 62px;
+  width: 150.11px;
+  text-align: center;
+}
+
+.buscar {
+  background-color: #FFFFFF;
+  border: 1px solid #8492A6;
+  border-radius: 5px;
+  width: 90%;
+
+}
+
+.footer {
+    width: 100%;
+    height: 5%;
+    background-color: rgba(0, 166, 255, 0.32);
+}
+
+.footerText {
+  color: #47525E;
+  font-family: Josefin Sans;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 10px;
+  text-align: center;
+}
+
+.titulo-form{
+    color: #47525E;
+    font-family: Josefin Sans;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 78px;
+    margin: 0%;
+}
+.ButtonAceptar{
+    background-color: #2D9CD7;
+    border-radius: 100px;
+    width: 150px;
+    height: 45px;
+    color: #FFFFFF;
+    font-size: 16px;
+    text-align: center;
+}
+
+.ButtonBorrar{
+    background-color: red;
+    border-radius: 100px;
+    width: 108px;
+    height: 35px;
+    color: #FFFFFF;
+    font-size: 16px;
+    text-align: center;
+}
+
+#formulario{
+    margin-top: 10%;
+}
+
+.textoCampo{
+    height:40px;
+    width: 500px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.tabla{
+    text-align:center;
+	background:#FFFFFF;
+	border-top:1px solid #BBBBBB;
+        border-bottom: 0px;
+        border-left: 0px;
+        border-right: 0px;
+}
+
+#menu_on{
+    display: inline-block;
+    width:30px;
+    height: 20px;
+    z-index: 2;
+    position: absolute;
+    right: 2%;
+    top: 4%;
+    margin: auto;
+}
+
+#menu_on span{
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    display: block;
+    position: absolute;
+    background: #fff;
+    transition: all 0.25s ease; 
+    transform-origin : 0px 100%;
+    background-color: black;
+}
+
+#menu_on span:nth-child(2){
+    top: calc(50% - 2px);
+}
+
+#menu_on span:nth-child(3){
+    bottom: 0;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -300px; 
+    width: 300px;
+    z-index: 1;
+    padding: 90px 30px 30px;
+    background: #68C5DB;
+    opacity: 0;
+    transition: all 0.75s ease;
+    font-size: 1.2em;
+    overflow-y: auto;
+}
+
+nav a{
+    display:block;
+    text-decoration: none;
+    padding: 10px;
+    color: rgba(255,255,255,0.75);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    transition: all ease 0.25s;
+}
+
+nav a:hover{
+    color: rgba(255,255,255,1);
+    border-bottom-color:rgba(255,255,255,0.4);
+}
+
+.visible_menu span:nth-child(1){
+    transform: rotate(45deg) translate(-2px,1px); 
+}
+
+.visible_menu span:nth-child(2){
+    opacity: 0;
+}
+
+.visible_menu span:nth-child(3){
+    transform: rotate(-45deg) translate(-3px,3px); 
+}
+
+.visible_menu nav{
+    right: 0;
+    opacity: 1;
+}
+
+.visible_menu #content{
+    transform: translateX(260px);
+}
+.pie{
+    position: fixed;
+    top: 95%;
+    bottom: 0%;
+    background-color: rgba(0, 166, 255, 0.32);
+    width: 100%;
+    height: 5%;
+    color: #47525E;
+  font-family: Josefin Sans;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 10px;
+  text-align: center;
+}
+
+.topnav {
+  overflow: hidden;
+}
+
+.topnav .icon {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}

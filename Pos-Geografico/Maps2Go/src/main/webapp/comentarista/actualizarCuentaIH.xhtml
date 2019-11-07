@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view>
+        <h:head>
+            <title>Actualizar</title>
+            <h:outputStylesheet name="css/estilos.css"/>
+        </h:head>
+        <h:body>
+                
+            <h1 class="titulo">Maps2Go</h1>
+            <h:form>
+            <p:commandButton id="home" icon="fa far fa-home" action="/comentarista/perfil?faces-redirect=true"/>
+            </h:form>
+            <hr></hr>
+            <center>
+                <h2 class="titulo-form">Actualizar datos</h2>
+
+                
+            <h:form>
+                <p:messages id="messages" showDetail="true" >
+                <p:autoUpdate />
+                </p:messages>
+                
+                <p:inputText id="nombre" 
+                             value="#{usuarioCtrl.nombreUsuario}" 
+                             placeholder="Cambiar nombre"
+                             styleClass="textoCampo"/> <br/> 
+                <p:inputText id="correo" 
+                             value="#{usuarioCtrl.correo}" 
+                             placeholder="Cambiar correo"
+                             styleClass="textoCampo"/> <br/>
+                <p:password id="contrasenia" 
+                            value="#{usuarioCtrl.contrasenia}" 
+                            placeholder="Cambiar contraseña"
+                            styleClass="textoCampo"/> <br/>
+                <p:commandButton action="#{usuarioCtrl.actualizarCuenta()}" 
+                                 value="Actualizar" ajax="false"
+                                 styleClass="ButtonAceptar"/> 
+            </h:form>
+                
+            </center>    
+            <br/> 
+            <div class="pie">
+                <p>&#9400; 2019 Maave</p>
+            </div>   
+
+        </h:body>
+    </f:view>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 30/03/2019 09:45:09 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.maave.maps2go.modelo.Tema" table="tema" schema="public" optimistic-lock="version">
+        <id name="tipoTema" type="string">
+            <column name="tipo_tema" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="usuario" class="com.maave.maps2go.modelo.Usuario" fetch="select">
+            <column name="id_usuario" not-null="true" />
+        </many-to-one>
+        <property name="color" type="string">
+            <column name="color" not-null="true" unique="true" />
+        </property>
+        <set name="marcadors" table="marcador" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="tipo_tema" not-null="true" />
+            </key>
+            <one-to-many class="com.maave.maps2go.modelo.Marcador" />
+        </set>
+    </class>
+</hibernate-mapping>

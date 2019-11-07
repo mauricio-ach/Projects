@@ -1,0 +1,22 @@
+Programa para convertir fechas en calendario gregoriano
+a calendario Tonalpohualli.
+Para compilar use el comando ant:
+# ant
+Esto generará un archivo llamado correlacion.jar
+Para ejecutar utilice el comando:
+# java -jar correlacion.jar
+
+Ingrese el dia, el mes y el año de la fecha deseada con
+el siguiente formato:
+Dos digitos para la fecha.
+Tres iniciales del mes.
+Cuatro digitos para el año.
+Ejemplo:
+23
+NOV
+1996
+
+Para generar la documentacion use:
+ant doc
+
+Araujo Chávez Mauricio 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Borrar informador</title>
+        <h:outputStylesheet name="css/estilos.css"/>
+        <script src="http://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous">
+        </script>
+    </h:head>
+    <f:view>    
+
+        <body>
+            <div>
+                <h1 class="titulo">Maps2go</h1>
+                <h:form>
+                    <p:commandButton id="home" icon="fa far fa-home" action="/administrador/perfil?faces-redirect=true"/>
+                </h:form>
+            </div>
+
+            <center>
+                <hr></hr>
+                <h2 class="titulo-form">Borrar informador</h2>
+            </center>
+            <h:form id="formulario">
+
+                <center>
+                    <p:dataTable class="tabla" style="width: 900px;" var="informadores" value="#{usuarioCtrl.informadores}">
+
+                        <p:column headerText="Nombre" style="width:200px;">
+                            <center>
+                                <h:outputText value="#{informadores.nombreUsuario}" />
+                            </center>
+                        </p:column>
+                        <p:column headerText="Correo" style="width:290px;">
+                            <center>
+                                <h:outputText value="#{informadores.correo}" />
+                            </center>
+                        </p:column>
+                        <p:column style="width:290px;">
+
+                            <p:commandButton action="#{usuarioCtrl.eliminarInformador(informadores.idUsuario)}"
+                                             value="Borrar"
+                                             styleClass="ButtonBorrar">
+                            </p:commandButton>
+
+                        </p:column>
+                    </p:dataTable>
+                </center>
+            </h:form>
+            <div class="pie">
+                <p>&#9400; 2019 Maave</p>
+            </div>
+        </body>
+    </f:view>
+</html>
+
